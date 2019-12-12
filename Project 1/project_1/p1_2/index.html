@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Alyssa Weigand">
+    <title>Project 1</title>
+
+    <link href="../_css/site.css" rel="stylesheet">
+</head>
+
+<body>
+    <a href="../index.html">Home</a><br>
+    <img src="../images/sftwear.png" alt="The software logo" height="400" width="700">
+    <div class="wrapper">
+        <div class="content">
+            <div class="main">
+                <h4>Display Name T-Shirt Maker Page </h4>
+                <h5>This page will prompt the user for their first and last name and display it for the creation of your shirt.</h5>
+                <script>
+                     // create a variable that prompts the user for their first name for input
+                    var firstname = prompt("Please enter first name");
+                     // create a variable that prompts the user for their last name for input
+                    var lastname = prompt("Please enter last name");
+                     // create a variable that adds the users last name and first name seperated with a comma and space 
+                    var fullname = lastname + ", " +firstname;
+                     // heading 4 for size of name for input
+                    var username = "<h1>" + fullname + "</h1>"
+                    //use document.write to display to the name of the user 
+                    document.write(username);
+                </script>
+
+</div>
+<div>
+</div>
+</div>
+</div>
+
+</body>
+
+</html>
+
+<footer>
+<p>IT 411 Fall 2019</p>
+</footer>

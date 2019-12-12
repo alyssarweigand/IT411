@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Alyssa Weigand">
+    <title>Project 1</title>
+    <link href="../_css/site.css" rel="stylesheet">
+</head>
+
+<body>
+    <a href="../index.html">Home</a><br>
+    <img src="../images/sftwear.png" alt="The software logo" height="400" width="700">
+    <div class="wrapper">
+        <div class="content">
+            <div class="main">
+                <h4>This webpage will prompt the user to choose three favorite numbers and then returns the average of those numbers.</h4>
+                <script>
+                    // prompts the user for their favorite number for input
+                    var num1 = Number(prompt("What is your favorite number?"));
+                    // prompts the user for their second favorite number for input
+                    var num2 = Number(prompt("What is your second favorite number?"));
+                    // prompts the user for their third favorite number for input
+                    var num3 = Number(prompt("What is your third favorite number?"));
+                    // creates a variable that concatenates the first, second, and third number AND divides by 3
+                    var averageOfNumber = (num1 + num2 + num3) / 3;
+                    // create a variable that will display the average number for the user 
+                    var theAverage = "<p>The average of your three favorite numbers is " + averageOfNumber + ".</p>";
+                    //use document.write to display to the total number of all three numbers 
+                    document.write(theAverage)
+                </script>
+
+</div>
+<div>
+</div>
+</div>
+</div>
+
+</body>
+
+</html>
+
+<footer>
+<p>IT 411 Fall 2019</p>
+</footer>

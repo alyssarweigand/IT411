@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset=UTF-8>
+    <meta name="author" content="Alyssa Weigand">
+    <title>Part 2</title>
+    <link href="stylesheets/IT411b.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    
+    <style> 
+    body {
+         background-color: peru
+        }
+ </style>
+
+ <script> 
+        "use strict";
+
+        $(document).ready(function() {
+            
+            //initially the images have their opacity set to 1.0
+            //mousing over an image changes the opacity to 0.5
+            $(".image").css({
+                opacity: 1.0
+            });
+
+            $(".image").mouseenter(function() {
+                $(this).stop().animate({
+                    opacity: 0.5
+                }, 2000);
+            });
+
+            $(".image").mouseleave(function() {
+                $(this).stop().animate({
+                    opacity: 1.0
+                }, 2000);
+            });
+
+            $(".image").click(function() {
+                //old large image
+                
+                var oldImage = $("#enlargedImage img");
+                
+                //image element created to for new enlarged image
+                var enlargedImage = $("<img src=\"" + this.src + "\">");
+                
+                //hides previously clicked image
+                enlargedImage.hide();
+
+            
+                //width and height set to x2 the original image of the new large
+                //renders a larger version of the image
+                enlargedImage.prop("width", this.width * 2);
+                enlargedImage.prop("height", this.height * 2);
+
+                //old image get completely faded out 
+                oldImage.fadeOut(
+                    3000,
+                    //removed it from the DOM
+                    function() {
+                        $(this).remove();
+                    }
+                );
+                
+                
+                //new image placed
+                $("#enlargedImage").append(enlargedImage);
+                //fadeIn new large image
+                enlargedImage.fadeIn(3000);
+            });
+
+            $("#gallery img:new").click();
+
+        });
+
+  </script>
+</head>
+
+<body>
+        <a href="../index.html">Home</a><br>
+        <h1>Part 2</h1>
+        <h2>sftwear wants to offer their customers a T-Shirt based on a preselected set of images.</h2>
+        <ul>
+            <li>Mousing over an image changes the opacity to 0.5.</li>
+            <li>Clicking on the image renders a larger version of the image below.</li>
+            <li>Images will change gradually.</li>
+          </ul>
+        <hr />
+        <div id="content">
+        <div id="clickstatus">
+        </div>
+        <div id="gallery">
+        <h3>Spooky Images</h3>
+            <img class="image" src="../images/spookycoffee.png" height="400px" width="250px">
+            <img class="image" src="../images/eyes.png" height="400px" width="250px">
+            <img class="image" src="../images/lips.png" height="400px" width="250px">
+            <img class="image" src="../images/pain.png" height="400px" width="350px">
+            <img class="image" src="../images/witch.png" height="400px" width="250px">
+        </div>
+        <div><h3>The larger image</h3></div>
+  <div id="enlargedImage"></div>
+    </div>
+
+</body>
+</html>

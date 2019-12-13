@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset=UTF-8>
+    <meta name="author" content="Alyssa Weigand">
+    <title>Part 1</title>
+    <link href="stylesheets/standard.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
+    </script>
+    </head>
+    
+   <body>
+        <a href="../index.html">Home</a><br>
+        <h1>Part 1</h1>
+        <h2>sftwear wants to offer their customers a poster based on the location of the mouse on the screen.</h2>
+        <ul>
+            <li>When the mouse is clicked once anywhere the image stops following.</li>
+            <li>It begins following when the mouse is clicked again.</li>
+            <li>Along with the image, the page should display in a fixed place the current location of the mouse and whether the image is following.</li>
+     </ul>
+     <hr />
+    <div id="gallery">
+        <p id="status"></p>
+        <p id="clicks"></p>
+        <img id="imageClick" class="image" src="../images/pain.png" height="300px" width="380px">
+    </div>
+    <script>
+        "use strict";
+        var clicked = false;
+
+        $(document).ready(function() {
+            
+            
+
+            //decided to use a function for false clicks
+            $(document).mousemove(function(e) {
+                if (clicked == false) { //function for false clicks
+                    clicked = false;
+
+
+                    
+                } else {
+                    clicked = true;
+
+                    //moves image with mouse
+                    $("#imageClick").offset({
+                        top: e.pageY,
+                        left: e.pageX
+
+                    });
+
+                }
+            });
+
+            // boolean to see if the mouse was clicked
+            $("html").click(function() {
+                if (clicked) {
+                    clicked = false;
+                    $("#clicks").text("Image is following mouse: " + clicked);
+
+
+                } else {
+                    clicked = true;
+                    $("#clicks").text("Image is following mouse: " + clicked);
+                }
+            });
+            
+            //mousemove event gives the mouses x and y coordinates
+            $(document).on("mousemove", function(event) {
+                $("#status").html("X = " + event.pageX + "<br/>" + "<br/>" + "Y = " + event.pageY); 
+
+            });
+
+        });
+
+    </script>
+              <style>
+            html {
+                margin: 0px;
+                height: 100%;
+                width: 100%;
+            }
+
+            body {
+                margin: 0px;
+                min-height: 100%;
+                width: 100%;
+
+            }
+
+        </style>
+
+    <style> 
+        body {
+            background-color: peru
+        }
+    </style>
+</body>
+
+
+</html>

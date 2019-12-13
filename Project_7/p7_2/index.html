@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Alyssa Weigand">
+    <title>Part 2</title>
+    <link href="stylesheets/standard.css" rel="stylesheet">
+    <link rel="icon" href="../images/sftwear.png">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+    <img src="../images/sftwear.png">
+    <h1>Part 2</h1>
+    <h2>The team at sftwear wants you ask the user for several pieces of information and they'll turn that info into a poster.</h2>
+    <br><a href="../index.html">Home</a><br>
+    <hr />
+</head>
+
+<body>
+
+ <!--css styling for html (form)-->
+    <style>
+        
+        html {
+            background-color: lightgray;
+        }
+        
+        body {
+            color: black;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        label.error {
+            display: block;
+            color: black;
+            font-size: 0.5em;
+            font-weight: italic;
+            text-align: center;
+            margin-left: 250px;
+        }
+        
+        input {
+            border: 1px solid black;
+        }
+        
+        input.error {
+            background: white;
+            border: 1px solid black;
+        }
+        
+        p {
+            color: black;
+        }
+        
+        #signup {
+            background-color: plum;
+            margin: 60px;
+            padding: 0px;
+            border: 1px solid black;
+        }
+        
+        #submitted {
+            background-color: black;
+            font-size: 1em;
+            color: aliceblue;
+            border: none;
+            border-radius: 90%;
+            margin: 5px;
+            padding: 7.5px;
+        }
+        
+        #answers {
+            text-align: left;
+            font-weight: normal;
+        }
+    </style>
+
+    <script>
+        "use strict"
+
+        // this is the shortcut notation for document ready	
+	$(function() {
+		
+        //validation
+		$('#signup').validate();	
+
+        //submit function 
+        $('#signup').submit(function(e){
+
+            //prevent from submitting form
+             e.preventDefault(); 
+
+            // if the form is not valid 
+            //don't do anything else
+            //will return
+            if (!$("#signup").valid()) return;
+        });
+            var myForm = document.getElementById("signup"); 
+            myForm.onsubmit = function() {
+                var input1 = document.getElementById("name").value;
+                var input2 = document.getElementById("thedate").value;
+                var input3 = document.getElementById("theage").value;
+                var input4 = document.getElementById("theurl").value;
+                var input5 = document.getElementById("theemail").value;
+
+                //display HTML below 
+                document.getElementById("answers").innerHTML = "<h3> Poster Information </h3>" + "<br />" + "Name: " + input1 + "<br />" + "Date of birth: " + input2 + "<br />" + "Number of pets: " + input3 + "<br />" + "Favorite website: " + input4 + "<br />" + "Work email address: " + input5; 
+                return false;
+            }
+
+        });	
+	
+
+  </script>
+
+    <p>Please fill out all your information so we can make you a poster!</p>
+
+    <form id="signup" action="../p7_2/index.html">
+        <label for="name" class="label">Enter your Name</label>
+        <input type="text" name="name" id="name" class="required">&nbsp;
+        <br>
+        <br>
+
+        <label for="thedate" class="label">Enter Today's Date</label>
+        <input type="text" name="thedate" id="thedate" class="required date">&nbsp;
+        <br>
+        <br>
+
+        <label for="theage" class="label">Enter Your Age</label>
+        <input type="text" name="theage" id="theage" class="required digits">&nbsp;
+        <br>
+        <br> 
+
+        <label for="theurl" class="label">Enter Your Website</label>
+        <input type="text" name="theurl" id="theurl" class="required url">&nbsp;
+        <br>
+        <br>
+
+        <label for="theemail" class="label">Enter Your Email</label>
+        <input type="text" name="theemail" id="theemail" class="required email">&nbsp;
+        <br>
+        <br>
+
+        <input type='submit' value='Submit' name="submit" id='submitted'>
+
+    </form>
+    <p id="answers"></p>
+</body>
+<footer>
+    <p>IT 411 Fall 2019</p>
+</footer>
+</html>

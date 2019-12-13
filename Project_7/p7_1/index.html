@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head> 
+    <meta charset="utf-8">
+    <meta name="author" content="Alyssa Weigand">
+    <link href="stylesheets/standard.css" rel="stylesheet">
+    <link rel="icon" href="../images/sftwear.png">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+    <title>Part 1</title>
+    <img src="../images/sftwear.png">
+    <h1>Part 1</h1>
+    <h2>The team at sftwear wants you ask the user for three pieces of information and they'll turn that info into a T-Shirt.</h2>
+    <hr />
+</head>
+<body>
+
+    <!--css of page and elements-->
+    <style>
+
+        html {
+            background-color: lightgrey;;
+        }
+        
+        body {
+            color: black;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        label.error {
+            display: block;
+            color: black;
+            font-size: 0.5em;
+            font-weight: italic;
+            text-align: center;
+            margin-left: 250px;
+
+        }
+        
+        input {
+            border: 1px solid black;
+        }
+
+        input.error {
+            background: blue;
+            border: 1px solid black;
+        }
+        
+        p {
+            color: black;
+        }
+        #signup {
+            background-color: cornflowerblue;
+            margin: 60px;
+            padding: 0px;
+            border: 1px solid black;
+        }
+        
+        #submitted {
+            background-color: black;
+            font-size: 1em;
+            color: white;
+            border: none;
+            border-radius: 90%;
+            margin: 5px;
+            padding: 7.5px;
+        }
+        
+        #answers {
+            text-align: left;
+            font-weight: normal;
+        }
+    </style>
+
+    <!--form that allows user input to questions and then submit -->
+    <!--input type is submit instead of a button (form)-->
+    <form id="signup" action="../p7_1/index.html">
+        <p>Please fill out all your information so we can make your favorite t-shirt!</p>
+<hr />
+        <label for="input" class="question">Enter Your First Name</label>
+        <input type="text" value="Please type your first name" name="input" id="input"> <br><br>
+
+        <label for="input1" class="question">Enter Your Last Name</label>
+        <input type="text" value="Please enter your last name" name="input1" id="input1"> <br><br>
+
+        <label for="input2" class="question">What is your favorite Thanksgiving dish?</label>
+        <input type="text" value="Please enter your favorite Thanksgiving dish" name="input2" id="input2"> <br /><br />
+
+        <input type='submit' value='Submit' name="submit" id='submitted'>
+
+    </form>
+    <p id="answers"></p>
+
+
+    <script>
+        "use strict";
+
+        $(function() {
+            //overrides default text within fields 
+            $(':text').focus(function() {
+                //console.log('got focus');
+                var field = $(this);
+
+                //questions posed inside the text fields
+                //default once user loads page
+                if (field.val() == field.prop('defaultValue')) {
+                    field.val('');
+                }
+            });
+
+            $(':text').blur(function() {
+                //console.log('got blur');
+                var field = $(this);
+
+                //questions posed inside the text fields
+                //default once user loads page
+                if (field.val() == '') {
+                    field.val(field.prop('defaultValue'));
+                }
+            });
+
+            $("#signup").submit(function() {
+                var field = $("#input");
+                var field1 = $("#input1");
+                var field2 = $("#input2");
+
+
+                //if statement saying if field 1 doesn't have input to send alert message
+                if (field.val() == '' || field.val() == field.prop('defaultValue')) {
+                    alert("Please fill out every field and submit again");
+                    return false;
+
+
+                    //else if statement saying if fields 1 and 2 don't have input that the user
+                    //will be asked to fill out every field
+                    //could have made a simplier way to do this, by perhaps combining them
+                } else if (field1.val() == '' || field1.val() == field1.prop('defaultValue')) {
+                    alert("Please fill out every field and submit again");
+                    return false;
+                } else if (field2.val() == '' || field2.val() == field2.prop('defaultValue')) {
+                    alert("Please fill out every field and submit again");
+                    return false;
+
+                    //else statement saying if all inputs are valid 
+                    //the user will be taken to their form
+                } else {
+                    alert('Your first name is ' + $("#input").val() + ',' + ' your last name is ' + $("#input1").val() + ', and ' + 'your favorite Thanksgiving dish is ' + $("#input2").val() + '!!!');
+                }
+
+            });
+        });
+    </script>
+
+</body>
+<footer>
+    <p>IT 411 Fall 2019</p>
+    <br><a href="../index.html">Home</a><br>
+</footer>
+
+</html>

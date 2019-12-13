@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset=UTF-8>
+    <meta name="author" content="Alyssa Weigand">
+    <title>Part 3</title>
+    <link href="stylesheets/standard.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <style> 
+        body {
+            background-color: peru
+        }
+</style>
+  </head>
+
+    <body>
+        <header>
+            <a href="../index.html">Return Home</a><br>
+            <h1>Part 3</h1>
+                <h2>Sftwear wants to offer their customers a T-Shirt based on a preselected set of images.</h2>
+            </h1>
+        <ul>
+            <li>When the user clicks on an image on the left it slides to the right 300 pixels</li>
+            <li>Clicking on the photo when it is on the right causes it to slide back to its original position on the left.</li>
+          </ui>
+        <hr />
+        <div id="content">
+        </div>
+        <div id="gallery">
+          <h3>Gallery of images</h3>
+            <br>
+          <img class="image" src="../images/boo.png" height="400px" width="250px">
+          <img class="image" src="../images/coffee.png" height="400px" width="250px">
+          <img class="image" src="../images/spooky.png" height="400px" width="250px">
+          <img class="image" src="../images/hocuspocus.png" height="400px" width="250px">
+        </div>
+
+       <!--set the style attribute "position" of the images in this class to "relative"!-->
+        <style>
+        .image {
+            position: relative;
+        }
+
+        #gallery {
+            position: relative;
+            width: 500px;
+            height: 200px;
+        }
+        
+        </style>
+
+ <script>
+        //scrict to keep it in order 
+        "use strict"
+
+        //document.ready to intialize mouse events 
+         $(document).ready(function() {
+
+        //$(".image").css({opacity: 0.5});
+
+      //image will return from right to left
+      $(".image").click(function() {
+	  	var imageSliding = $(this).position();  
+		
+		
+		var wid = $(this).width();
+		var hei = $(this).height();
+		
+    //animate() method 
+		if (imageSliding.left>=300) {
+			$(this).stop().animate({left: 1}, 2000);
+
+       //else statement that slides image to the right
+		} else {
+		    $(this).stop().animate({left: 300}, 2000);
+		}
+		
+      });
+    }); 
+  </script>
+
+
+</div>
+</body>
+</html>

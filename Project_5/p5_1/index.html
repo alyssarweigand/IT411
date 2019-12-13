@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset=UTF-8>
+    <meta name="author" content="Alyssa Weigand">
+    <title>Part 1</title>
+    <link href="stylesheets/standard.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <style> 
+            body {
+                background-color: peru
+            }
+    </style>
+</head>
+
+<body>
+        <h1>Part 1</h1>
+        <h2>Sftwear wants to offer their customers a T-Shirt based on a preselected set of images.</h2>
+        <hr />
+        <div id="content">
+        </div>
+        <div id="gallery">
+            <h3>Gallery of Images</h3>
+            <img class="image" src="../images/boo.png" height="400px" width="250px">
+            <img class="image" src="../images/coffee.png" height="400px" width="250px">
+            <img class="image" src="../images/spooky.png" height="400px" width="250px">
+            <img class="image" src="../images/hocuspocus.png" height="400px" width="250px">
+        </div>
+
+<script>
+
+     //scrict to keep it in order 
+     "use strict";
+
+         //document.ready to intialize mouse events
+        $(document).ready(function() {
+
+            //mouseenter animate 
+            //When mouse enters an image
+            //The image will double in size over the course of 3 or more seconds 
+            $(".image").mouseenter(function() {
+                $(this).stop().animate({
+                    height: "400px",
+                    width: "500px",
+                }, 3000);
+            });
+
+            //mouseleave animate that makes image return to normal size 
+            $(".image").mouseleave(function() {
+                $(this).stop().animate({
+                    height: "200px",
+                    width: "250px",
+                }, 3000);
+            });
+
+        });
+    </script>
+    <div class="footer">
+            <p>IT 411 Fall 2019</p>
+            <a href="../index.html">Home</a><br>
+        </div>
+    </body>
+    </html>
+
+

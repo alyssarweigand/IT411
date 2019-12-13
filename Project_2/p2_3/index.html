@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Alyssa Weigand">
+    <title>Project 2</title>
+
+    <link href="../_css/site.css" rel="stylesheet">
+</head>
+
+<body>
+     <img src="../images/sftwear.png" alt="The software logo" height="400" width="700">
+    <div class="wrapper">
+        <div class="content">
+            <div class="main">
+                <script>
+                    
+                    //all code will be in strict mode 
+                    //strict mode cleans the code 
+                    "use strict";
+                    
+                    //declare the array with the ten messages 
+                    var Arrayinput = [];
+
+                    // prompts the user for their lucky number for input
+                    // prompt loops 
+                    // do loops for inputed value before -1 is entered 
+                    do {
+                        var input = Number(prompt("Enter a number to multiply or enter -1 to stop"));
+
+                        // if user does not input -1 then the enter values into the array will keep "pushing"
+                        if (input != -1) Arrayinput.push(input);
+
+                        if(input==0){document.writeln("Zero is a hero. Good choice. Well done.")}
+                    }
+                    
+                    // if -1 is still not input then proceed with the following 
+                    while (input != -1);
+
+                    // total varaible is set to 1 
+                    // the total is the counter where each time the user inputs a number it will be added to this counter and increment 
+                    var total = 1;
+
+
+                   // for loop to increment (add) numbers from the users input to the counter
+                   for (var i=0;i < Arrayinput.length; i++) {
+                     total = total * Arrayinput[i];
+
+                   }
+                   document.write("<h3>The entered values were: " +  Arrayinput  + " . " + " The number displayed on your shirt will be " + total +  " which is the product of your lucky numbers.</h3>")
+                    
+                    </script>
+
+            </div>
+            <div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<br> 
+<i><a href="../homepage/index.html">Homepage</a><br></i>
+</html>
+
+<footer>
+    <p>IT 411 Fall 2019</p>
+</footer>

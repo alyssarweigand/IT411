@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Alyssa Weigand">
+    <title>Project 2</title>
+
+    <link href="../_css/site.css" rel="stylesheet">
+</head>
+
+<body>
+     <img src="../images/sftwear.png" alt="The software logo" height="400" width="700">
+    <div class="wrapper">
+        <div class="content">
+            <div class="main">
+                    <h4>This webpage will prompt the user to input their lucky number and will receive a message that will be displayed on their t-shirt</h4>
+                <script>
+                    
+                    //efficient javascript 
+                    "use strict";
+
+                    // prompts the user for their lucky number for input
+                     var userLuckyNumber = Number(prompt("Please enter your lucky number!"));
+                    
+                    // declare our array with our list of messages 
+                    var tenMessages = ['Roll Tide' , 'Blue is my favorite color' , 'Pineapple does not belong on pizza', 'Honey wheres my super suit', 'Do not make me get my flying monkeys', 
+                     'Chicago in the fall is pretty ' , 'Code-blooded' , 'Keep calm and code on' , 'Bug Hunter' , 'I like saying like a lot' ];
+
+
+                    // find favoriite numbers positin in the array % 10
+                    var user_LN = (userLuckyNumber) % 10;
+
+                    //output the message to the user 
+                    document.write("<h4> This is the message that will be on your t-shirt:</h4>" + tenMessages[user_LN]);
+
+                </script>
+
+            </div>
+            <div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<br> 
+<br>
+<i><a href="../homepage/index.html">Homepage</a><br></i>
+</html>
+
+<footer>
+    <p>IT 411 Fall 2019</p>
+</footer>

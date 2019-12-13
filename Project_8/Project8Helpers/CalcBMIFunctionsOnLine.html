@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8">
+  <title>Fade In</title>
+  <link href="stylesheets/IT411b.css" rel="stylesheet">
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="BMICalcHelper.js"></script>
+  
+  <script>
+	$(document).ready(function(){
+    var BMIServiceMetrticURL = "https://it411ajaxbmi.azurewebsites.net/api/CalcBMIMetric?code=drWqhY2hYhS21zqbQ5a5soO/rqkIU0x6JVPokgww1uaMKQ8BHu9jBw==";      
+    var BMIServiceImperialURL = "https://it411ajaxbmi.azurewebsites.net/api/CalcBMIStandard?code=oaBKyZE01NVHOXFQDQ4xJFngKar1ND5xkCvqEQmwyCzAMq1aKM5Uug=="
+
+    var height = 73;
+    var weight = 180;
+
+    var postParmsImpertial = {
+      "height": height,
+      "weight": weight
+    };
+
+    // call the BMI Imperial Service
+    $.get(BMIServiceImperialURL, postParmsImpertial)  
+        .done(function( data ) {
+          //alert( "Data Loaded: " + data );
+          $("#BMIImperial").text(data.toFixed(2));
+        })
+        .fail(function(error) {
+          alert( "error: "+ error.statusText )
+    });
+
+
+    var heightCM = 185.42;
+    var weightKM = 81.646;
+
+    var postParmsMetric = {
+      "height": heightCM,
+      "weight": weightKM
+    };
+
+    // call the BMI metric Service
+    $.get(BMIServiceMetrticURL, postParmsMetric)  
+        .done(function( data ) {
+          //alert( "Data Loaded: " + data );
+          $("#BMIMetric").text(data.toFixed(2));
+        })
+        .fail(function(error) {
+          alert( "error: "+ error.statusText )
+    });
+
+    
+		
+	});
+  </script>
+</head>
+
+<body>
+<h1>Only works in Chrome and Edge NOT IE</h1>
+<p id="BMIImperialFeetAndInches"></p>
+<p id="BMIImperial"></p>
+<p id="BMIMetricCMandMM"></p>
+<p id="BMIMetric"></p>
+</body>
+</html>

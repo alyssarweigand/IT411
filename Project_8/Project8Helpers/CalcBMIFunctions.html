@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8">
+  <title>Fade In</title>
+  <link href="stylesheets/IT411b.css" rel="stylesheet">
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="BMICalcHelper.js"></script>
+  
+  <script>
+	$(document).ready(function(){
+	
+	$("#calc").submit(function(e){
+		e.preventDefault();
+		var height = Number($("#height").val());
+		var weight = Number($("#weight").val());
+			$("#BMIImperial").text(calcImperialBMI(height,weight));
+	});
+  
+    //$("#BMIImperialFeetAndInches").text(calcImperialBMIFeetAndInches("6a","1a","180a"));
+	//	$("#BMIImperialFeetAndInches").text(calcImperialBMIFeetAndInches(6,1,180));
+//		$("#BMIImperial").text(calcImperialBMI(73,180));
+		//
+		//$("#BMIMetricCMandMM").text(calcMetricBMICMandMM(185,4,81.6466266));
+		//$("#BMIMetric").text(calcMetricBMI(185.4,81.6466266));
+		
+	});
+  </script>
+</head>
+
+<body>
+<form id="calc">
+Enter height<input type="text" id="height">
+Enter Weight<input type="text" id="weight">
+<button type="submit">Calc BMI</button>
+</form>
+<p id="BMIImperialFeetAndInches"></p>
+<p id="BMIImperial"></p>
+<p id="BMIMetricCMandMM"></p>
+<p id="BMIMetric"></p>
+</body>
+</html>

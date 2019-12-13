@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Alyssa Weigand">
+    <link href="stylesheets/standard.css" rel="stylesheet">
+    <link rel="icon" href="../images/sftwear.png">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+    <title>Part 3</title>
+    <img src="../images/sftwear.png">
+    <h1>Part 3</h1>
+    <h2>The team at sftwear wants get the needed information update what you did in part 2 with nice JQueryUI controls for the date and the numeric.</h2>
+    <hr />
+
+</head>
+
+<body>
+    <!--css styling for html (form)-->
+    <style>
+
+        html {
+            background-color: lightgray;
+        }
+
+        body {
+            color: black;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        label.error {
+            display: block;
+            color: black;
+            font-size: 0.5em;
+            font-weight: italic;
+            text-align: center;
+            margin-left: 500px;
+        }
+        
+        input {
+            border: 1px solid black;
+        }
+        
+        input.error {
+            background: white;
+            border: 1px solid black;
+            
+        }
+        
+        p {
+            color: black;
+        }
+        #signup {
+            background-color: lightsalmon;
+            margin: 60px;
+            padding: 0px;
+            border: 1px solid black;
+        }
+        
+        #submitted {
+            background-color: black;
+            font-size: 1em;
+            color: lightsalmon;
+            border: none;
+            border-radius: 90%;
+            margin: 5px;
+            padding: 7.5px;
+        }
+        
+        #answers {
+            text-align: left;
+            font-weight: normal;
+        }
+
+    </style>
+
+    <script>
+        "use strict";
+
+        // this is the shortcut notation for document ready	
+        $(function() {
+            //adds datepicker
+            $("#datepicker").datepicker(); 
+            //adds spinner
+            $("#spinner").spinner();
+            //validation 
+            $('#signup').validate(); 
+
+            //submit function 
+            $('#signup').submit(function(e) {
+
+                //default prevent
+                e.preventDefault(); 
+
+                // if the form is not valid 
+                //don't do anything else 
+                //Will return 
+                if (!$("#signup").valid()) return;
+            });
+
+            
+            //shows users filled out form 
+            //appears at the bottom of page
+            var myForm = document.getElementById("signup"); 
+            myForm.onsubmit = function() {
+                var input1 = document.getElementById("name").value;
+                var input2 = document.getElementById("datepicker").value;
+                var input3 = document.getElementById("spinner").value;
+                var input4 = document.getElementById("web").value;
+                var input5 = document.getElementById("email").value;
+
+                //display HTML below 
+                document.getElementById("answers").innerHTML = "<h3> Poster Information </h3>" + "<br />" + "Name: " + input1 + "<br />" + "Date of birth: " + input2 + "<br />" + "Number of pets: " + input3 + "<br />" + "Favorite website: " + input4 + "<br />" + "Work email address: " + input5; 
+                return false;
+            }
+
+
+        });
+    </script>
+
+<form id="signup" action="../p7_3/index.html">
+    <p>Please fill out all your information so we can make you a poster!</p>
+    <hr />
+
+    <label for="name" class="label">What's your full name?</label>
+    <input type="text" name="name" id="name" class="required">&nbsp;
+    <br>
+    <br>
+
+    <label for="thedate" class="label">When were you born?</label>
+    <input type="text" id="datepicker" required="datepicker">&nbsp;
+    <br>
+    <br>
+
+    <label for="spinner">How many pets do you have?</label>
+    <input type="text" id="spinner" name="spinner" class="required spinner">&nbsp;
+    <br>
+    <br>
+
+    <label for="theurl" class="label">What's your favorite website URL?</label>
+    <input type="text" name="theurl" id="web" class="required url">&nbsp;
+    <br>
+    <br>
+
+    <label for="theemail" class="label">Enter your work email</label>
+    <input type="text" name="email" id="email" class="required email">&nbsp;
+    <br>
+    <br>
+    
+    <br>
+    <input type='submit' value='Submit' name="submit" id='submitted'>
+
+
+</form>
+<p id="answers"></p>
+</body>
+
+<footer>
+        <p>IT 411 Fall 2019</p>
+        <a href="../index.html">Home</a><br>
+</footer>
+    
+    </html>

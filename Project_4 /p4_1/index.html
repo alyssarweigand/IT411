@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Alyssa Weigand">
+    <link href="stylesheets/standard.css" rel="stylesheet">
+    <title>Part 1</title>
+
+    <style> 
+    body {
+        background-color: lightcoral
+    }
+
+    .highlightme {
+        background-color: #FFFF00;
+    }
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        //scrict to keep it in order 
+        "use strict";
+
+        //will remove highlighting 
+        $(document).ready(function() {
+            $("#toggleHighlight").click(function() {
+                if ($(this).text() == "Remove Highlight") {
+
+                    //span will add highlighting 
+                    $('span.pq').each(function() {
+                        $(this).toggleClass('highlightme');
+                        $("#toggleHighlight").text("Add Highlight");
+                    }); //end each 
+                } else {
+                    $('span.pq').each(function() {
+                        $(this).toggleClass('highlightme');
+                    }); // end each
+
+                    $("#toggleHighlight").text("Remove Highlight")
+
+                }
+            });
+
+        }); //end ready
+
+
+    </script>
+    <body>
+        <a href="../index.html">Home</a><br>
+            <img src="../images/sftwear.png" alt="The software logo" height="400" width="700">
+               <div class="wrapper">
+                   <div class="content">
+                       <div class="main">
+        <div id="header">
+            <h1>Part 1 </h1>
+            <h3>sftwear wants to offer their customers with some text that can be created with either highlighting or without highlighting. </h3>
+            <hr>
+            <button id="toggleHighlight">Highlight</button>
+        </div>
+        <div id="content">
+        <h2>T-Shirts</h2>
+        <span class="pq">Sftwear was born Fall 2019 at DePaul University. The dream was simple. Give students unique apparel. Whatever custom message is on your t-shirt, will be personal and high-quality. It fits males and females.</span>
+       <h2>Plaques</h2>
+       <span class="pq">Sftwear invites you to participate in The Coding Games. This is an event held by CSS campus organization that aims to help build student’s confidence and skills in coding events. Each day, a plaque will be given out to recognize individuals and their achievements.</span>
+        <h2>Art</h2>
+        <span class="pq">Sftwear works with passionate students to bring you unique art. Whatever your interest, style and inspiration is, we will sure have a piece for you. This year, Sftwear is holding an art festival at DePaul University. Many creative students will be selling their art there. Come check it out! </span>
+        </div>
+        <div class="footer">
+        <p>IT 411 Fall 2019</p>
+        </div>
+
+
+    </body>
+
+    </html>

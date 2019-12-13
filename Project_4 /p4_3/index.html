@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset=UTF-8>
+    <meta name="author" content="Alyssa Weigand">
+    <title>Part 3</title>
+    <link href="../_css/site.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<body>
+            <a href="../index.html">Home</a><br>
+            <img src="../images/sftwear.png" alt="The software logo" height="400" width="700">
+               <div class="wrapper">
+                   <div class="content">
+                       <div class="main">
+            <h2>sftwear want to offer their customers a T-Shirt that list the mouse location where they have clicked on the page.</h2>
+            
+            <ul>
+                <li>Click anywhere on the page.</li>
+                <li>Once click occurs, a list of click locations and current click count will appear</li>
+                <li>Reset button is available to start over</li>
+            </ul>
+            <button id="reset">Reset</button>
+            <p id="receiver"></p>
+            <p id="message1"></p>
+            <p id="counterBox"></p>
+    </body>
+
+<script>
+
+        //fixes mistakes 
+         "use strict";
+        
+        var counter = 0;
+
+        //click function 
+        $(document).click(function() {
+            counter++;
+            $("#counterBox").html("Current clicks: " + counter);
+        });
+
+        $(document).ready(function() {
+
+            //counter that holds users clicking 
+            var userData = 0;
+
+            //shows user the amount of times clicked 
+            $('#output').bind("click", userData, function(e) {
+                $('#receiver').text("Clicked" + ++userData + " times")
+            });
+
+            //empties receiver and sets counter to zero
+            $('#clear').click(function() {
+                $('#receiver').empty();
+                userData = 0;
+            });
+        });
+          
+          $(document).ready(function() {
+              console.log("Here");
+
+            //parameter for the click event anonymous function so that you can retrieve the position of the click.
+              $(document).click(function(e) {
+                //$('#output').append("clentX="+e.clientX);
+                $('#message1').prepend("<br>" + "Click location: " + e.clientX + "," + e.clientY);
+                console.log("clientX=" + e.clientX);
+                console.log("clientY=" + e.clientY);
+                console.log("e parameters=" + e.toString());
+            });
+
+            //stops propogation 
+            $('button').click(function(evt) {
+                evt.stopPropagation();
+
+
+            });
+
+            //clears output 
+            $('#reset').click(function() {
+                $('#message1').empty();
+                userData = 0;
+            });
+
+            //clears all the output 
+            //brings counter back to 0 
+            $('#reset').click(function() {
+                $('#counterBox').empty();
+                userData = 0;
+            });
+
+          });
+
+        </script>
+        <style>
+            html {
+                margin: 0px;
+                height: 100%;
+                width: 100%;
+            }
+
+            body {
+                margin: 0px;
+                min-height: 100%;
+                width: 100%;
+
+            }
+
+        </style>
+        </head>
+
+        
+        <footer>
+                <p>IT 411 Fall 2019</p>
+            </footer>
+
+
+       </html>
+
+  

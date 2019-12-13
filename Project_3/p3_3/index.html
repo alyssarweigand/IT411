@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset=UTF-8>
+    <meta name="author" content="Alyssa Weigand">
+    <link href="stylesheets/standard.css" rel="stylesheet">
+    <script> src="https://code.jquery.com/jquery-latest.min.js"</script>
+    <title>Part 3</title>
+
+</head>
+<body>
+        <a href="../index.html">Home</a><br>
+        <img src="../images/sftwear.png" alt="The software logo" height="400" width="700">
+        <div class="wrapper">
+                <h1>Part 1</h1>
+                <h4>The user will be offered a t-shirt that lists their favorite words in a sorted order</h4>
+    <script>
+       //prompt that will store array as each word is entered 
+       //replacing the word array with words
+       var words = []
+
+       //this will prompt the user the ability to enter as many words as pleased 
+       var word =(prompt("Please enter a word or type END to stop"));
+
+       //WHILE loop 
+       //if the word END is not entering then it will continute to loop 
+       while (word != 'END') {
+           //Entered words will be pushed into an empty array
+           words.push(word);
+           //prompt the user again 
+           //repeating process
+           var word = (prompt("please enter a word or type END to stop"));
+
+       }
+
+       // END indicates that all words have been entered
+       // if END is typed, the program will stop 
+       if (word == 'END') {
+           //program will sort users input in ALPHABETICAL order to the page 
+           //display the array contents using join method
+           document.write("The words you entered are: " + words.sort().join(", "));
+       }
+
+
+
+
+    </script>
+</head>
+
+
+    </div>
+</body>
+
+
+</html>
+<footer>
+    <p>IT 411 Fall 2019</p>
+</footer>

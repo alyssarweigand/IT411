@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Alyssa Weigand">
+    <link href="stylesheets/standard.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <title>Part 1</title>
+    <script>
+        //document.ready to intialize mouse events 
+        $(document).ready(function() {
+            //events for even paragraph
+            $(".even").mouseenter(function() {
+                $(this).css("font-weight", "bold");
+        });
+
+        $(".even").mouseleave(function() {
+            $(this).css("font-weight", "normal");
+        });
+
+        //events for odd paragraph 
+        $(".odd").mouseup(function() {
+            $(this).css("font-weight", "bold");
+        });
+
+        $(".odd").mousedown(function() {
+            $(this).css("font-weight", "normal");
+        });
+
+    });
+
+    </script>
+</head>
+
+
+<body>
+    <a href="../index.html">Home</a><br>
+        <h1>Part 1</h1>
+        <h3>
+            <i>This webpage will offer sftwear customers a poster that has some information about their favorite restaurant.
+            </i>
+        </h3>
+
+        <hr />
+
+        <main>
+            <div id="introduction">
+                <p id="paragraph1" class="even">
+                    <img src="../images/outside.jpg" alt="Da Luciano Pizzeria" height="400" width="700" >
+                    <br><i>Da Luciano Pizzeria, 2019</i><br>
+                    <br>
+                    Established in the fall of 2003, Da Luciano Pizza, Pasta and Catering, was not the first successful restaurant business for Luciano. Born and raised in Caccamo, Sicily, Luciano often dreamt of moving to the United States and opening a restaurant.  He and his family moved to the United States in 1969, and he began working in restaurants.  In 1983, Luciano's dreams were finally becoming reality as he was one of the owners of La Gondola Ristorante and La Gondola Pizza and Pasta in the Lakeview area for 20 years. He went on to sell La Gondola Pizza and Pasta when his son, Ignazio, became inspired to follow in his father's footsteps.  It was through working at La Gondola as a teenager and young adult that Ignazio's interest in the restaurant business began to bloom and discussions about learning and going into business with his father began. From this point forward, there was no stopping this father-son team.  Da Luciano Pizza, Pasta and Catering was established in November of 2003 in River Grove, IL, where it has been a hit with the locals. 
+                    <i>(Da Lucianos, 2019)</i>
+                    
+
+                    </p>
+                    <p id="Paragraph2" class="odd">
+                        Da Luciano, a cozy double storefront, has a busy pizza counter in front and a big main dining room next door. The specialties are pizza and pasta, available gluten-free, but regulars insist the Sicilian fish special ($21) is the must-order dish. The trout is lightly breaded then grilled, Sicilian-style, until crisp and smoky, and served with garlic and oil lemon sauce; it's also available gluten-free, upon request. Rosalia also revealed that the favorite stuffed artichoke is always made gluten-free.
+                        <i>(Chicago tribune, 2017)</i>
+
+    </div>
+</body>
+
+
+</html>
+<footer>
+    <p>IT 411 Fall 2019</p>
+</footer>

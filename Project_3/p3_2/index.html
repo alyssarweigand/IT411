@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Alyssa Weigand">
+    <link href="../_css/site.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <title>Part 2</title>
+
+   
+</head>
+
+<body>
+    <a href="../index.html">Home</a><br>
+     <img src="../images/sftwear.png" alt="The software logo" height="400" width="700">
+    <div class="wrapper">
+        <div class="content">
+            <div class="main">
+                    <h1>Part 2</h1>
+                    <h4><i>This webpage will prompt the user to input their lucky number and will receive a message that will be displayed on their t-shirt<i></h4>
+                
+                <script>
+                    // declare our array with our list of messages
+                    var tenMessages = ['Roll Tide' , 'Blue is my favorite color' , 'Pineapple does not belong on pizza', 'Honey wheres my super suit', 'Do not make me get my flying monkeys', 
+                     'Chicago in the fall is pretty ' , 'Code-blooded' , 'Keep calm and code on' , 'Bug Hunter' , 'I like saying like a lot'];
+
+                    // prompts the user for their lucky number for input
+                    var userLuckyNumber = Number(prompt("Please enter your lucky number greater than 0!"));
+                
+                    //if user input is greater than or equal to 0
+                    //then do this
+                    $(document).ready(function() {
+                        if (userLuckyNumber >= 0 ) {
+
+                            // find favoriite numbers positin in the array % 10
+                            var user_LN = (userLuckyNumber) % 10; //check if the input is less than 0 
+                    
+                            //if users input is greater than or eqaul to zero 
+                             //then do this 
+                             $("#user_LN").html("<h4> This is the message that will be on your t-shirt: </h4>" + "<h2><i>" + "'" + tenMessages[user_LN] + "'" + "</h2><i>");
+                                                       
+                    //if not return the user an error message 
+                    } else { 
+                        alert('Oops, your lucky number must be greater than 0.');
+
+                    }
+                });
+
+                </script>
+
+            </div>
+            <div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<p id="user_LN"></p>
+</html>
+
+<footer>
+    <p>IT 411 Fall 2019</p>
+</footer>
